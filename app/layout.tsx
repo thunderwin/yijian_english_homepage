@@ -1,12 +1,26 @@
 import { CartProvider } from "components/cart/cart-context";
 import { Navbar } from "components/layout/navbar";
 import { WelcomeToast } from "components/welcome-toast";
-import { GeistSans } from "geist/font/sans";
+import { Outfit, Roboto_Mono } from "next/font/google";
 import { getCart } from "lib/shopify";
 import { ReactNode } from "react";
 import { Toaster } from "sonner";
 import "./globals.css";
 import { baseUrl } from "lib/utils";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+  weight: ["300", "400", "500", "600"],
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500"],
+});
 
 const { SITE_NAME } = process.env;
 
@@ -27,19 +41,23 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 }) {
-  // Don't await the fetch, pass the Promise to the context provider
   const cart = getCart();
 
   return (
-    <html lang="en" className={GeistSans.variable}>
-      <body className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${outfit.variable} ${robotoMono.variable}`}
+    >
+      <body
+        suppressHydrationWarning
+        className="bg-background font-display text-text-primary antialiased selection:bg-accent-subtle selection:text-text-primary"
+      >
         <CartProvider cartPromise={cart}>
           <Navbar />
-          <main>
-            {children}
-            <Toaster closeButton />
-            <WelcomeToast />
-          </main>
+          <main>{children}</main>
+          <Toaster closeButton />
+          <WelcomeToast />
         </CartProvider>
       </body>
     </html>

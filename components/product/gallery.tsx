@@ -1,7 +1,7 @@
 "use client";
 
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { GridTileImage } from "components/grid/tile";
+import { Icon } from "components/icons/icon";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -51,7 +51,7 @@ export function Gallery({
                 aria-label="Previous product image"
                 className={buttonClassName}
               >
-                <ArrowLeftIcon className="h-5" />
+                <Icon name="arrow-left" size={20} />
               </button>
               <div className="mx-1 h-6 w-px bg-neutral-500"></div>
               <button
@@ -59,7 +59,7 @@ export function Gallery({
                 aria-label="Next product image"
                 className={buttonClassName}
               >
-                <ArrowRightIcon className="h-5" />
+                <Icon name="arrow-right" size={20} />
               </button>
             </div>
           </div>

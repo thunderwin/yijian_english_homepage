@@ -1,7 +1,7 @@
 "use client";
 
-import { PlusIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
+import { Icon } from "components/icons/icon";
 import { addItem } from "components/cart/actions";
 import { Product, ProductVariant } from "lib/shopify/types";
 import { useSearchParams } from "next/navigation";
@@ -35,7 +35,7 @@ function SubmitButton({
         className={clsx(buttonClasses, disabledClasses)}
       >
         <div className="absolute left-0 ml-4">
-          <PlusIcon className="h-5" />
+          <Icon name="plus" size={20} />
         </div>
         Add To Cart
       </button>
@@ -50,7 +50,7 @@ function SubmitButton({
       })}
     >
       <div className="absolute left-0 ml-4">
-        <PlusIcon className="h-5" />
+        <Icon name="plus" size={20} />
       </div>
       Add To Cart
     </button>

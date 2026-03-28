@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { Dialog, Transition } from "@headlessui/react";
-import { ShoppingCartIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Icon } from "components/icons/icon";
 import LoadingDots from "components/loading-dots";
 import Price from "components/price";
 import { DEFAULT_OPTION } from "lib/constants";
@@ -84,7 +84,7 @@ export default function CartModal() {
 
               {!cart || cart.lines.length === 0 ? (
                 <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
-                  <ShoppingCartIcon className="h-16" />
+                  <Icon name="shopping-cart" size={64} />
                   <p className="mt-6 text-center text-2xl font-bold">
                     Your cart is empty.
                   </p>
@@ -231,9 +231,11 @@ export default function CartModal() {
 function CloseCart({ className }: { className?: string }) {
   return (
     <div className="relative flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors dark:border-neutral-700 dark:text-white">
-      <XMarkIcon
+      <Icon
+        name="x"
+        size={24}
         className={clsx(
-          "h-6 transition-all ease-in-out hover:scale-110",
+          "transition-all ease-in-out hover:scale-110",
           className,
         )}
       />
