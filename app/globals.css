@@ -68,6 +68,20 @@
 }
 
 @layer base {
+  html,
+  body {
+    font-family: var(--font-outfit), system-ui, sans-serif;
+    color: var(--color-text-primary);
+    background: var(--color-background);
+  }
+
+  code,
+  pre,
+  kbd,
+  samp {
+    font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
   *,
   ::after,
   ::before,
