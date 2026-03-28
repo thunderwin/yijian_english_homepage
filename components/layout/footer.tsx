@@ -1,76 +1,138 @@
 import Link from "next/link";
 
-import FooterMenu from "components/layout/footer-menu";
 import LogoSquare from "components/logo-square";
-import { getMenu } from "lib/shopify";
-import { Suspense } from "react";
 
 const { COMPANY_NAME, SITE_NAME } = process.env;
+
+const footerSitemap = [
+  {
+    title: "Products",
+    href: "/products",
+    links: [
+      { title: "Furniture & Soft Furnishings", href: "/products#furniture-soft-furnishings" },
+      { title: "Custom Windows & Doors", href: "/products#custom-windows-doors" },
+      { title: "Stairs & Railings", href: "/products#stairs-railings" },
+      { title: "Cabinetry Systems", href: "/products#cabinetry-systems" },
+      { title: "Entry Doors, Fence & Gate", href: "/products#entry-doors-fence-gate" },
+      { title: "Garage Door", href: "/products#garage-door" },
+    ],
+  },
+  {
+    title: "Solutions",
+    href: "/solutions",
+    links: [
+      { title: "For Homeowners", href: "/solutions/homeowners" },
+      { title: "For Architects & Designers", href: "/solutions/architects-designers" },
+      { title: "For Builders & Developers", href: "/solutions/builders-developers" },
+      { title: "Product & Package", href: "/solutions/packages" },
+    ],
+  },
+  {
+    title: "Projects",
+    href: "/projects",
+    links: [{ title: "Case Study Hub", href: "/projects" }],
+  },
+  {
+    title: "Process",
+    href: "/how-it-works",
+    links: [
+      { title: "Our Process", href: "/how-it-works" },
+      { title: "Design to Delivery", href: "/how-it-works/design-to-delivery" },
+      { title: "Timeline & Milestones", href: "/how-it-works/timeline-milestones" },
+      { title: "Pricing Approach", href: "/how-it-works/pricing-approach" },
+    ],
+  },
+  {
+    title: "Resources",
+    href: "/resources",
+    links: [
+      { title: "Insights", href: "/resources/insights" },
+      { title: "Guides", href: "/resources/guides" },
+      { title: "Inspiration", href: "/resources/inspiration" },
+      { title: "Tools", href: "/resources/tools" },
+    ],
+  },
+  {
+    title: "About",
+    href: "/about",
+    links: [
+      { title: "Why Arcaya", href: "/about" },
+      { title: "Quality Assurance", href: "/about/quality-assurance" },
+      { title: "Delivery & Installation", href: "/about/delivery-installation" },
+      { title: "Supply Chain Capability", href: "/about/supply-chain" },
+      { title: "Our Capability", href: "/about/capabilities" },
+      { title: "Partner Network", href: "/about/partner-network" },
+      { title: "Careers", href: "/about/careers" },
+      { title: "Contact", href: "/about/contact" },
+    ],
+  },
+];
 
 export default async function Footer() {
   const currentYear = new Date().getFullYear();
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : "");
-  const skeleton =
-    "w-full h-6 animate-pulse rounded-sm bg-neutral-200 dark:bg-neutral-700";
-  const menu = await getMenu("next-js-frontend-footer-menu");
   const copyrightName = COMPANY_NAME || SITE_NAME || "";
 
   return (
-    <footer className="text-sm text-neutral-500 dark:text-neutral-400">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0 dark:border-neutral-700">
-        <div>
-          <Link
-            className="flex items-center gap-2 text-black md:pt-1 dark:text-white"
-            href="/"
-          >
+    <footer className="border-t border-border bg-background-alt text-sm text-text-tertiary">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-10 px-6 py-12 lg:px-12">
+        <div className="flex flex-col gap-8">
+          <Link className="flex items-center gap-3 text-text-primary" href="/">
             <LogoSquare size="sm" />
-            <span className="uppercase">{SITE_NAME}</span>
+            <span className="font-display text-xl font-light uppercase tracking-wide">
+              {SITE_NAME}
+            </span>
           </Link>
+
+          <nav className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+            {footerSitemap.map((section) => (
+              <div key={section.title}>
+                <Link
+                  href={section.href}
+                  className="font-body text-xs uppercase tracking-widest text-text-primary transition-colors hover:text-accent"
+                >
+                  {section.title}
+                </Link>
+                <ul className="mt-4 space-y-2">
+                  {section.links.map((link) => (
+                    <li key={link.href + link.title}>
+                      <Link
+                        href={link.href}
+                        className="font-body text-sm text-text-secondary transition-colors hover:text-text-primary"
+                      >
+                        {link.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
+
+          <div className="border-t border-border pt-6">
+            <Link
+              href="/about/contact"
+              className="inline-flex items-center justify-center border border-text-primary bg-text-primary px-6 py-3 font-body text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-text-secondary"
+            >
+              Book a Consultation
+            </Link>
+          </div>
         </div>
-        <Suspense
-          fallback={
-            <div className="flex h-[188px] w-[200px] flex-col gap-2">
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-              <div className={skeleton} />
-            </div>
-          }
-        >
-          <FooterMenu menu={menu} />
-        </Suspense>
-        <div className="md:ml-auto">
-          <a
-            className="flex h-8 w-max flex-none items-center justify-center rounded-md border border-neutral-200 bg-white text-xs text-black dark:border-neutral-700 dark:bg-black dark:text-white"
-            aria-label="Deploy on Vercel"
-            href="https://vercel.com/templates/next.js/nextjs-commerce"
-          >
-            <span className="px-3">▲</span>
-            <hr className="h-full border-r border-neutral-200 dark:border-neutral-700" />
-            <span className="px-3">Deploy</span>
-          </a>
-        </div>
-      </div>
-      <div className="border-t border-neutral-200 py-6 text-sm dark:border-neutral-700">
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-1 px-4 md:flex-row md:gap-0 md:px-4 min-[1320px]:px-0">
+
+        <div className="flex flex-col gap-2 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
           <p>
             &copy; {copyrightDate} {copyrightName}
-            {copyrightName.length && !copyrightName.endsWith(".")
-              ? "."
-              : ""}{" "}
-            All rights reserved.
+            {copyrightName.length && !copyrightName.endsWith(".") ? "." : ""} All rights
+            reserved.
           </p>
-          <hr className="mx-4 hidden h-4 w-[1px] border-l border-neutral-400 md:inline-block" />
-          <p>
-            <a href="https://github.com/vercel/commerce">View the source</a>
-          </p>
-          <p className="md:ml-auto">
-            <a href="https://vercel.com" className="text-black dark:text-white">
-              Created by ▲ Vercel
-            </a>
-          </p>
+          <div className="flex items-center gap-6 text-xs uppercase tracking-widest">
+            <Link href="/privacy-policy" className="transition-colors hover:text-text-primary">
+              Privacy
+            </Link>
+            <Link href="/terms-and-conditions" className="transition-colors hover:text-text-primary">
+              Terms
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -3,6 +3,33 @@
 @plugin "@tailwindcss/container-queries";
 @plugin "@tailwindcss/typography";
 
+@theme {
+  --color-background: #FFFFFF;
+  --color-background-alt: #F5F5F7;
+  --color-background-dark: #1A1A1A;
+  --color-background-black: #000000;
+
+  --color-text-primary: #111111;
+  --color-text-secondary: #333333;
+  --color-text-tertiary: #7A7A7A;
+  --color-text-muted: #9CA3AF;
+  --color-text-inverse: #FFFFFF;
+
+  --color-border: #E5E5E5;
+  --color-border-strong: #D4D4D4;
+  --color-border-inverse: rgba(255, 255, 255, 0.1);
+
+  --color-accent: #C9A962;
+  --color-accent-subtle: rgba(201, 169, 98, 0.1);
+  --color-accent-warm: #8B7355;
+
+  /* Typography scale: raise the minimum readable size site-wide */
+  --text-xs: 0.875rem;
+  --text-xs--line-height: 1.25rem;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.375rem;
+}
+
 :root {
   /* Background Colors */
   --color-background: #FFFFFF;
