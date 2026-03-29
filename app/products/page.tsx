@@ -1,9 +1,9 @@
-import { SectionPage } from "components/content/section-page";
 import { productCategoryItems } from "components/content/product-category-quick-nav";
+import { SectionPage } from "components/content/section-page";
 
 export const metadata = {
   title: "Products",
-  description: "Explore Arkaya product capabilities across furniture, finishes, custom millwork, and envelope systems.",
+  description: "Explore Arcaya product capabilities across furniture, finishes, custom millwork, and envelope systems.",
 };
 
 export default function ProductsPage() {
@@ -11,7 +11,7 @@ export default function ProductsPage() {
     <SectionPage
       kicker="Products"
       title="Product Systems for Complete High-End Residences"
-      description="Arkaya organizes products by both category and project intent, so teams can specify faster and maintain design consistency from interior finishes to facade elements."
+      description="Arcaya organizes products by both category and project intent, so teams can specify faster and maintain design consistency from interior finishes to facade elements."
       highlights={[
         "Furniture & Soft Furnishings organized by room and style",
         "Custom windows and doors in French and American design languages",

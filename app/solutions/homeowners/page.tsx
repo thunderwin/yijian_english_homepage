@@ -10,7 +10,7 @@ export default function HomeownersSolutionPage() {
     <SectionPage
       kicker="Solutions · Homeowners"
       title="One Partner from Design Direction to Final Installation"
-      description="For homeowners, the priority is confidence. Arkaya consolidates design coordination, product decisions, and installation planning to reduce rework and uncertainty."
+      description="For homeowners, the priority is confidence. Arcaya consolidates design coordination, product decisions, and installation planning to reduce rework and uncertainty."
       highlights={[
         "Style proposal and room-level planning",
         "Integrated selection across finishes, furniture, and decor",

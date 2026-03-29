@@ -1,9 +1,9 @@
-import Link from "next/link";
 import { SectionPage } from "components/content/section-page";
+import Link from "next/link";
 
 export const metadata = {
   title: "How It Works",
-  description: "Arkaya process from discovery to aftercare with clear stage outputs and ownership.",
+  description: "Arcaya process from discovery to aftercare with clear stage outputs and ownership.",
 };
 
 const processSteps = [
@@ -21,7 +21,7 @@ export default function HowItWorksPage() {
     <SectionPage
       kicker="How It Works"
       title="A Clear, Stage-Based Delivery Model"
-      description="High-value projects need transparent process control. Arkaya breaks execution into clear stages with defined outputs and accountability."
+      description="High-value projects need transparent process control. Arcaya breaks execution into clear stages with defined outputs and accountability."
       highlights={[
         "Each stage has a clear owner, output, and checkpoint",
         "Design and procurement handoff is controlled and documented",

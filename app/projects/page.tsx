@@ -10,7 +10,7 @@ export default function ProjectsPage() {
     <SectionPage
       kicker="Projects"
       title="Case Studies That Show Execution, Not Just Images"
-      description="Projects are structured to help clients evaluate Arkaya by scope, service model, and measurable outcomes."
+      description="Projects are structured to help clients evaluate Arcaya by scope, service model, and measurable outcomes."
       highlights={[
         "Filter by project type, style, and service scope",
         "Coverage across luxury residences, staging, and developer programs",

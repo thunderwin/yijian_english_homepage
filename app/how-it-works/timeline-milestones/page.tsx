@@ -10,7 +10,7 @@ export default function TimelineMilestonesPage() {
     <SectionPage
       kicker="How It Works · Timeline"
       title="Milestones That Build Project Certainty"
-      description="Arkaya uses milestone control to make project progress visible and actionable across design, procurement, and delivery phases."
+      description="Arcaya uses milestone control to make project progress visible and actionable across design, procurement, and delivery phases."
       highlights={[
         "Requirements confirmation",
         "Design and specification sign-off",

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { SectionPage } from "components/content/section-page";
+import Link from "next/link";
 
 export const metadata = {
   title: "Solutions",
@@ -34,7 +34,7 @@ export default function SolutionsPage() {
     <SectionPage
       kicker="Solutions"
       title="Different Roles. One Delivery System."
-      description="Solutions pages translate Arkaya capabilities into role-specific outcomes so each stakeholder sees a clear path to decision and execution."
+      description="Solutions pages translate Arcaya capabilities into role-specific outcomes so each stakeholder sees a clear path to decision and execution."
       highlights={[
         "Clear scope boundaries by role and project phase",
         "Aligned communication between owner, design, and build teams",

@@ -10,7 +10,7 @@ export default function ArchitectsDesignersSolutionPage() {
     <SectionPage
       kicker="Solutions · Architects & Designers"
       title="Design Intent Preserved Through Delivery"
-      description="Arkaya supports architect and designer teams with specification alignment, material coordination, and project execution support so concepts stay intact through final installation."
+      description="Arcaya supports architect and designer teams with specification alignment, material coordination, and project execution support so concepts stay intact through final installation."
       highlights={[
         "Specification and submittal support for real project workflows",
         "Material sample and selection assistance for faster approvals",

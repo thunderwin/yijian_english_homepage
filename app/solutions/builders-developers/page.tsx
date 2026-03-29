@@ -10,7 +10,7 @@ export default function BuildersDevelopersSolutionPage() {
     <SectionPage
       kicker="Solutions · Builders & Developers"
       title="Control Cost, Timeline, and Delivery Risk"
-      description="Arkaya gives builder and developer teams a structured procurement and delivery framework that improves predictability across multi-phase residential projects."
+      description="Arcaya gives builder and developer teams a structured procurement and delivery framework that improves predictability across multi-phase residential projects."
       highlights={[
         "Batch procurement and package-level planning",
         "Project milestone tracking from release to site delivery",

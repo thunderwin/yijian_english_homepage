@@ -10,7 +10,7 @@ export default function SupplyChainPage() {
     <SectionPage
       kicker="About · Supply Chain"
       title="Supply Chain Capability for Complex Scope"
-      description="Arkaya coordinates factories and suppliers to improve response speed, quality consistency, and package-level execution control."
+      description="Arcaya coordinates factories and suppliers to improve response speed, quality consistency, and package-level execution control."
       highlights={[
         "Factory integration and sourcing depth",
         "Response speed on schedule-sensitive scope",

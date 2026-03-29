@@ -10,7 +10,7 @@ export default function PricingApproachPage() {
     <SectionPage
       kicker="How It Works · Pricing"
       title="Transparent Pricing Logic for Complex Scope"
-      description="Arkaya pricing explains what is included, what changes cost, and how standard packages differ from custom configurations."
+      description="Arcaya pricing explains what is included, what changes cost, and how standard packages differ from custom configurations."
       highlights={[
         "Cost structure by design, product, and delivery components",
         "Primary price drivers and variable scope factors",
